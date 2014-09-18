@@ -1,0 +1,14 @@
+<p>
+Job title:  <%= @job.title %>
+</p>
+<p>
+Company:  <%= @job.company.name %> <br>
+Location:   <%= @job.company.location %>
+</p>
+<p>
+Description:  <%= @job.description %>
+</p>
+
+<%= link_to 'Back', jobs_path%><br>
+<%= link_to 'Company', company_path(@job.company)%>
+

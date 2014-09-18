@@ -1,0 +1,16 @@
+<h2> Create New Jobs </h2>
+<%= form_for @job do |f| %>
+<p>
+<%= f.label :title %><br>
+<%= f.text_field :title %>
+</p>
+<p>
+<%= f.label :description %><br>
+<%= f.text_area :description %>
+</p>
+<p>
+<%= f.label :companies %><br>
+<%= f.collection_select :company_id, Company.order(:name),:id,:name, include_blank: true %>
+<%= f.submit %>
+</p>
+<% end %>

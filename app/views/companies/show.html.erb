@@ -1,0 +1,18 @@
+<h2><%= @company.name %> </h2>
+
+<p>
+Industry: <%= @company.industry %><br>
+Location: <%= @company.location %><br><br>
+Description: <%= @company.description %>
+</p>
+
+<p>
+<% @company.jobs.each do |job| %>
+Jobzz:
+<ul><li>
+<%= link_to "#{job.title}", job_path(job) %>
+</li>
+<% end %>
+</ul>
+
+<%= link_to 'Back', companies_path %>

@@ -1,0 +1,12 @@
+<h1> Companies </h1>
+<%= link_to 'New Company', new_company_path %>
+<ul>
+<% @companies.each do |comp| %>
+<li>
+<%= link_to"#{comp.name}", company_path(comp) %>
+<%= link_to "Edit", edit_company_path(comp) %>
+<%= link_to 'Destroy', company_path(comp),
+    method: :delete, data: { confirm: 'Are you sure?' } %>
+</li>
+<% end %>
+</ul>
